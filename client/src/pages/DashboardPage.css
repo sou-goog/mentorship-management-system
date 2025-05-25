@@ -1,0 +1,130 @@
+/* client/src/pages/DashboardPage.css */
+.dashboard-container {
+  padding: 10px 0; /* Less padding if .app-container provides overall padding */
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px; /* More space after header */
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0; /* Subtle separator */
+}
+
+.dashboard-header h1 { /* Changed from h2 for semantic main page title */
+  font-size: 2.2rem; /* Prominent title */
+  color: #1a202c; /* Darker charcoal */
+  margin-bottom: 0.25em;
+  border-bottom: none; /* Remove default h2 underline if it was there */
+}
+
+.dashboard-role-info {
+  font-size: 1.05rem;
+  color: #718096;
+}
+
+.dashboard-role-info strong {
+  color: #4a5568;
+  font-weight: 600;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive cards */
+  gap: 25px;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 20px 25px;
+  box-shadow: 0 3px 8px rgba(100, 116, 139, 0.07); /* Softer shadow */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(100, 116, 139, 0.1);
+}
+
+.dashboard-card .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f3f4f6; /* Light separator in card */
+}
+.dashboard-card .card-header .card-icon {
+    font-size: 1.5rem; /* Adjust icon size if you add icons */
+    color: #60a5fa; /* Example icon color */
+}
+
+.dashboard-card h3 {
+  font-size: 1.25rem;
+  color: #2d3748;
+  margin-top: 0;
+  margin-bottom: 0; /* Handled by card-header padding */
+  font-weight: 600;
+}
+
+.dashboard-card .card-content {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+.dashboard-card .card-content p {
+  margin-bottom: 0.8em;
+}
+.dashboard-card .card-content p:last-child {
+  margin-bottom: 0;
+}
+
+
+.dashboard-card .card-action {
+  margin-top: 20px; /* Space above action button */
+  text-align: left; /* Align button to left, or center/right as preferred */
+}
+
+/* Use existing button classes from App.css, but can add specifics */
+.dashboard-card .button-primary.button-small { /* Example if you make a small variant */
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+ul.mentee-list-dashboard {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+ul.mentee-list-dashboard li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #e2e8f0;
+}
+ul.mentee-list-dashboard li:last-child {
+  border-bottom: none;
+}
+ul.mentee-list-dashboard li a {
+  font-weight: 500;
+  display: block; /* Make entire list item clickable */
+  padding: 4px 0;
+}
+
+.dashboard-loading, .dashboard-info {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.1rem;
+    color: #718096;
+}
+
+.mentor-info { /* Styling for "Your Mentor: ..." text */
+    font-size: 0.85rem;
+    color: #718096;
+    margin-top: 15px;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 10px;
+}

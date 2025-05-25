@@ -1,0 +1,197 @@
+/* client/src/App.css */
+
+/* --- Global Reset & Body (Keep from previous modern version) --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.65; background-color: #f8f9fa; /* Even lighter, almost white */
+  color: #4A5568; font-size: 16px;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+}
+#root { display: flex; flex-direction: column; min-height: 100vh; }
+
+/* --- Main App Container & Main element --- */
+.app-container {
+  max-width: 1280px; width: 90%; margin: 30px auto; padding: 0; /* Remove padding if main has it */
+  background-color: transparent; /* Let main or cards have background */
+  box-shadow: none; /* Remove shadow from app-container, apply to cards */
+  border-radius: 0; /* Remove radius from app-container */
+  flex-grow: 1;
+}
+main { padding: 20px 15px; /* Add some padding to main if .app-container has none */ }
+
+
+/* --- Typography (Keep from previous modern version or adjust) --- */
+h1, h2, h3, h4, h5, h6 { color: #1A202C; margin-top: 1.5em; margin-bottom: 0.75em; line-height: 1.3; font-weight: 600; }
+h1 { font-size: 2.25rem; letter-spacing: -0.025em; }
+h2 { font-size: 1.8rem; font-weight: 700; color: #2D3748; border-bottom: 1px solid #E2E8F0; padding-bottom: 0.5em; margin-bottom: 1.2em; }
+h3 { font-size: 1.35rem; font-weight: 600; color: #2D3748; margin-top: 1.8em; margin-bottom: 0.8em; }
+p { margin-bottom: 1.1rem; color: #4A5568; }
+a { color: #3B82F6; text-decoration: none; font-weight: 500; transition: color 0.2s ease-in-out, opacity 0.2s ease; }
+a:hover { color: #2563EB; opacity: 0.85; text-decoration: none; }
+hr { border: none; border-top: 1px solid #E2E8F0; margin: 2.5rem 0; }
+
+/* --- Card Styling (for grouping content) --- */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Softer, more diffused shadow */
+  border: 1px solid #e2e8f0; /* Optional light border */
+}
+.card h2, .card h3 {
+  margin-top: 0; /* Remove top margin for headings inside cards */
+  border-bottom: none; /* Remove underline for h2 if inside a card */
+  padding-bottom: 0;
+}
+.card h2 + p, .card h3 + p { /* Space after heading if followed by paragraph */
+    margin-top: 0.5em;
+}
+
+
+/* --- Form Styling (Enhanced) --- */
+form {
+  display: flex; flex-direction: column; gap: 20px;
+  max-width: 600px; margin: 20px auto; /* Less top/bottom margin if inside a card */
+  padding: 0; /* Remove padding if form is inside a card that has padding */
+  background-color: transparent; /* Form itself is transparent if inside a card */
+  border: none; box-shadow: none;
+}
+/* If form is NOT inside a .card, you might want to re-add padding/bg/border/shadow to the form tag itself */
+
+form > div.form-group { /* Add class="form-group" to divs wrapping label+input */
+  display: flex; flex-direction: column; gap: 8px;
+}
+
+form label {
+  font-weight: 500; color: #374151; /* Slightly darker */
+  font-size: 0.9rem;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="date"],
+form input[type="file"],
+form select,
+form textarea {
+  padding: 12px 15px; border: 1px solid #D1D5DB; /* Tailwind gray-300 */
+  border-radius: 6px; font-size: 0.95rem; width: 100%;
+  color: #111827; /* Tailwind gray-900 */
+  background-color: #F9FAFB; /* Tailwind gray-50 */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+form input[type="file"] { padding: 8px 10px; } /* Slight adjustment for file input */
+form input[type="file"]::file-selector-button {
+  padding: 8px 15px; margin-right: 12px; border: none; border-radius: 5px;
+  background-color: #E5E7EB; color: #374151; font-weight: 500; cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+form input[type="file"]::file-selector-button:hover { background-color: #D1D5DB; }
+
+form input:focus, form select:focus, form textarea:focus {
+  border-color: #3B82F6; /* Tailwind blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  outline: none; background-color: #fff;
+}
+
+form textarea { min-height: 100px; }
+form small { font-size: 0.85em; color: #6B7280; }
+
+/* --- Button Styling (Keep or refine from previous modern version) --- */
+button, .button-link {
+  padding: 10px 20px; font-size: 0.95rem; font-weight: 500;
+  border-radius: 6px; cursor: pointer; text-align: center; text-decoration: none;
+  display: inline-block; border: 1px solid transparent;
+  transition: all 0.2s ease-in-out; margin-right: 10px; margin-top: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Subtle shadow for buttons */
+}
+button:hover, .button-link:hover { transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.08); }
+button:active, .button-link:active { transform: translateY(0px); box-shadow: inset 0 1px 2px rgba(0,0,0,0.1); }
+button:disabled, .button-link.disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none;}
+
+form button[type="submit"], .button-primary { background-color: #3B82F6; color: white; border-color: #3B82F6; }
+form button[type="submit"]:hover, .button-primary:hover { background-color: #2563EB; border-color: #1D4ED8; }
+.approve-button { background-color: #10B981; color: white; border-color: #10B981; }
+.approve-button:hover { background-color: #059669; border-color: #047857; }
+.reject-button { background-color: #EF4444; color: white; border-color: #EF4444; }
+.reject-button:hover { background-color: #DC2626; border-color: #B91C1C; }
+.withdraw-button { background-color: #F59E0B; color: white; border-color: #F59E0B; }
+.withdraw-button:hover { background-color: #D97706; border-color: #B45309; }
+.view-button { background-color: #6366F1; color: white; border-color: #6366F1; }
+.view-button:hover { background-color: #4F46E5; border-color: #4338CA; }
+.cancel-button { background-color: #6B7280; color: white; border-color: #6B7280; }
+.cancel-button:hover { background-color: #4B5563; border-color: #374151; }
+
+
+/* --- Messages (Modernized - Keep from previous modern version) --- */
+.error-message, .success-message, .info-message {
+  padding: 12px 18px; margin: 15px 0; border-radius: 6px; display: flex;
+  justify-content: space-between; align-items: center; font-size: 0.9rem;
+  border-left-width: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.error-message { color: #991B1B; background-color: #FEE2E2; border-left-color: #EF4444; }
+.success-message { color: #065F46; background-color: #D1FAE5; border-left-color: #10B981; }
+.info-message { color: #1D4ED8; background-color: #DBEAFE; border-left-color: #3B82F6; }
+
+/* --- Tables (Modernized - Keep or refine from previous) --- */
+table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  margin-top: 20px; margin-bottom: 20px; font-size: 0.9rem;
+  background-color: #fff; border-radius: 8px; /* Rounded table */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden;
+}
+th, td {
+  padding: 12px 16px; text-align: left; vertical-align: middle;
+  border-bottom: 1px solid #E5E7EB; /* Lighter row separator */
+}
+th:first-child, td:first-child { padding-left: 24px; } /* More padding on sides */
+th:last-child, td:last-child { padding-right: 24px; }
+
+th {
+  background-color: #F9FAFB; /* Very light gray for header */
+  color: #374151; font-weight: 600;
+  text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.05em;
+  border-bottom-width: 2px; border-bottom-color: #E5E7EB;
+}
+tr:hover td { background-color: #F3F4F6; } /* Subtle row hover */
+tr:last-child td { border-bottom: none; }
+
+/* --- Modal Detail Grid (Keep or refine from previous) --- */
+.detail-grid {
+  display: grid; grid-template-columns: 150px 1fr; /* Adjust label width */
+  gap: 10px 20px; font-size: 0.95em; line-height: 1.7;
+}
+.detail-grid dt { font-weight: 500; color: #6B7280; text-align: left; }
+.detail-grid dd { margin-left: 0; word-break: break-word; color: #1F2937; }
+
+em.leave-status-note { color: #3B82F6; margin-left: 8px; font-size: 0.85em; }
+ul.selected-files-list { list-style-type: none; padding-left: 0; font-size: 0.9em; color: #4A5568; margin-top: 8px; }
+ul.selected-files-list li { margin-bottom: 4px; padding: 4px; background-color: #F7FAFC; border-radius: 4px; }
+
+.spinner-container { /* Optional: For centering the spinner on a page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px; /* Ensure some space for the spinner */
+  padding: 20px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey track */
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #007bff; /* Primary color for the spinner arc - use your app's primary color */
+  animation: spin 0.8s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

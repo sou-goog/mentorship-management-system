@@ -1,0 +1,146 @@
+/* client/src/pages/HomePage.css */
+.home-page-container {
+  text-align: center; /* Center content by default */
+  padding: 20px 0; /* Vertical padding */
+}
+
+.home-hero {
+  background-color: #4a5568; /* Dark slate for hero */
+  color: white;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+  border-radius: 8px; /* Match .app-container if used */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.home-hero h1 {
+  font-size: 2.8rem; /* Larger hero title */
+  margin-bottom: 0.5em;
+  color: white; /* Ensure heading color is white on dark bg */
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.home-subtitle {
+  font-size: 1.15rem;
+  color: #cbd5e0; /* Lighter subtitle text */
+  max-width: 600px;
+  margin: 0 auto 30px auto; /* Center subtitle */
+  line-height: 1.7;
+}
+
+.home-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Space between buttons */
+}
+
+.home-button { /* Specific styling for home page buttons if needed */
+  padding: 12px 25px !important; /* Ensure padding is applied */
+  font-size: 1.05rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* If you have .button-primary and .button-secondary in App.css, they can be used */
+/* Or define them specifically here */
+.button-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white !important; /* Ensure border is visible */
+}
+.button-secondary:hover {
+  background-color: white;
+  color: #4a5568; /* Hero background color */
+  border-color: white !important;
+}
+
+
+.home-features {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+.home-features h2 {
+  margin-bottom: 1.5em;
+  font-size: 2rem;
+  border-bottom: none; /* Remove global h2 underline for this section title */
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 30px;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+
+.feature-icon {
+  font-size: 2.5rem; /* Make icons larger */
+  margin-bottom: 15px;
+  /* background-color: #e0e7ff; Light primary color for icon background */
+  /* color: #4299E1; Primary color for icon */
+  /* width: 70px; */
+  /* height: 70px; */
+  /* border-radius: 50%; */
+  /* display: inline-flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  color: #2D3748;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.95rem;
+  color: #4A5568;
+  line-height: 1.6;
+}
+
+.home-user-actions {
+  background-color: #edf2f7; /* Light gray section */
+  padding: 40px 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.home-user-actions h2 {
+  border-bottom: none;
+}
+
+.action-links {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button-outline { /* Example of an outline button style */
+  background-color: transparent;
+  color: #4299E1; /* Primary color */
+  border: 2px solid #4299E1 !important;
+  padding: 10px 20px !important;
+  font-weight: 500;
+}
+.button-outline:hover {
+  background-color: #4299E1;
+  color: white;
+}
